@@ -4,6 +4,15 @@ import { test, expect } from 'vitest';
 import { sum } from './math';
 
 test('Should sum all the numbers in given array', () => {
-  const result = sum([3, 4, 8]);
-  expect(result).toBe(15);
+  //Arrange
+  const numbers = [3, 4, 9];
+  const expectedResult = numbers.reduce((prev, curr) => {
+    return prev + curr;
+  }, 0);
+
+  //Act
+  const result = sum(numbers);
+
+  //Assert
+  expect(result).toBe(expectedResult);
 });
