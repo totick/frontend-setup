@@ -1,6 +1,6 @@
 // The function "test" and function "it" are synonyms.
 
-import { test, expect } from 'vitest';
+import { test, it, expect } from 'vitest';
 import { sum } from './math';
 
 test('Should sum all the numbers in given array', () => {
@@ -12,6 +12,20 @@ test('Should sum all the numbers in given array', () => {
 
   //Act
   const result = sum(numbers);
+
+  //Assert
+  expect(result).toBe(expectedResult);
+});
+
+it('should convert string numbers and give the correct sum', () => {
+  //Arrange
+  const inputs = ['5', 2];
+  const expectedResult = inputs.reduce((acc, cur) => {
+    return acc + +cur;
+  }, 0);
+
+  //Act
+  const result = sum(inputs);
 
   //Assert
   expect(result).toBe(expectedResult);
