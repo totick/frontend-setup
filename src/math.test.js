@@ -44,7 +44,7 @@ it('should return 0 if an empty array is passed', () => {
 });
 
 it('should throw an error if no argument is passed into the function', () => {
-  //Arrange
+  //Act
   const resultFn = () => {
     sum();
   };
@@ -55,8 +55,12 @@ it('should throw an error if no argument is passed into the function', () => {
 
 it('should throw an error if multiple arguments are passed into the function', () => {
   //Arrange
+  const num1 = 1;
+  const num2 = 2;
+
+  //Act
   const resultFn = () => {
-    sum(1, 2, 3);
+    sum(num1, num2);
   };
 
   //Assert
