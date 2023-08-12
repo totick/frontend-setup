@@ -64,5 +64,5 @@ it('should throw an error if multiple arguments are passed into the function', (
   };
 
   //Assert
-  expect(resultFn).toThrowError(TypeError);
+  expect(resultFn).toThrowError('numbers is not iterable');
 });
